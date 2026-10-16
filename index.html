@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Bavarchee - CV</title>
+    <!-- Persian Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2b5c8a; /* moderncv blue */
+            --text-color: #333333;
+            --light-text: #666666;
+            --border-color: #2b5c8a;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-color);
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+            position: relative;
+        }
+
+        /* Language Toggle Styles */
+        .lang-nav {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .lang-nav button {
+            padding: 8px 24px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid var(--primary-color);
+            background-color: #fff;
+            color: var(--primary-color);
+            border-radius: 20px;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .lang-nav button.active {
+            background-color: var(--primary-color);
+            color: #fff;
+            box-shadow: 0 2px 5px rgba(43, 92, 138, 0.4);
+        }
+
+        /* Header Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            width: 110px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .name {
+            font-size: 2.4em;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 0 0 5px 0;
+            line-height: 1.1;
+        }
+
+        .title {
+            font-size: 1.1em;
+            color: var(--light-text);
+            line-height: 1.3;
+        }
+
+        .title .pretitle {
+            display: block;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .contact-info {
+            text-align: right;
+            font-size: 0.9em;
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .socials {
+            margin-top: 5px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 1.3em;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--primary-color);
+            padding-bottom: 4px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* CV Item Styles (Label + Content) */
+        .cvitem {
+            display: flex;
+            margin-bottom: 12px;
+        }
+
+        .cvitem-label {
+            width: 170px;
+            flex-shrink: 0;
+            font-weight: bold;
+            text-align: right;
+            padding-right: 20px;
+            color: var(--primary-color);
+        }
+
+        .cvitem-content {
+            flex-grow: 1;
+            text-align: justify;
+        }
+
+        .cvitem-content p {
+            margin: 0 0 10px 0;
+        }
+
+        /* CV Entry Styles (Date + Title + Description) */
+        .cventry {
+            display: flex;
+            margin-bottom: 20px;
+        }
+
+        .cventry-date {
+            width: 170px;
+            flex-shrink: 0;
+            text-align: right;
+            padding-right: 20px;
+            color: var(--light-text);
+            font-weight: 500;
+        }
+
+        .cventry-content {
+            flex-grow: 1;
+        }
+
+        .cventry-title {
+            font-weight: bold;
+            font-size: 1.05em;
+            color: var(--text-color);
+        }
+
+        .cventry-subtitle {
+            font-style: italic;
+            color: var(--light-text);
+        }
+
+        .cventry-location {
+            font-size: 0.9em;
+            color: var(--light-text);
+        }
+
+        .cventry-content ul {
+            margin: 8px 0 0 0;
+            padding-left: 20px;
+        }
+
+        .cventry-content ul li {
+            margin-bottom: 4px;
+            text-align: justify;
+        }
+
+        /* Utility */
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        /* =========================================
+           RTL (Right-to-Left) Styles for Persian
+           ========================================= */
+        body.fa {
+            font-family: 'Vazirmatn', Tahoma, Arial, sans-serif;
+            direction: rtl;
+        }
+
+        body.fa .header-left {
+            flex-direction: row-reverse;
+        }
+
+        body.fa .header-left > div {
+            text-align: right;
+        }
+
+        body.fa .contact-info {
+            text-align: left;
+        }
+
+        body.fa .section-title {
+            text-align: right;
+        }
+
+        body.fa .cvitem {
+            flex-direction: row-reverse;
+        }
+
+        body.fa .cvitem-label {
+            text-align: left;
+            padding-right: 0;
+            padding-left: 20px;
+        }
+
+        body.fa .cvitem-content {
+            text-align: right;
+        }
+
+        body.fa .cventry {
+            flex-direction: row-reverse;
+        }
+
+        body.fa .cventry-date {
+            text-align: left;
+            padding-right: 0;
+            padding-left: 20px;
+        }
+
+        body.fa .cventry-content ul {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+
+        body.fa .cventry-content ul li {
+            text-align: right;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .header-left {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            body.fa .header-left {
+                flex-direction: column;
+            }
+
+            .contact-info {
+                text-align: center;
+                margin-top: 15px;
+            }
+            
+            body.fa .contact-info {
+                text-align: center;
+            }
+
+            .cvitem, .cventry {
+                flex-direction: column;
+            }
+            
+            body.fa .cvitem, body.fa .cventry {
+                flex-direction: column;
+            }
+
+            .cvitem-label, .cventry-date {
+                width: 100%;
+                text-align: left;
+                padding-right: 0;
+                padding-bottom: 5px;
+            }
+            
+            body.fa .cvitem-label, body.fa .cventry-date {
+                text-align: right;
+                padding-left: 0;
+            }
+        }
+        
+        /* Print Styles */
+        @media print {
+            body { background-color: white; }
+            .container { box-shadow: none; margin: 0; padding: 0; max-width: 100%; }
+            .section { page-break-inside: avoid; }
+            .lang-nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Language Switcher -->
+    <div class="lang-nav">
+        <button id="btn-en" class="active" onclick="switchLang('en')">English</button>
+        <button id="btn-fa" onclick="switchLang('fa')">فارسی</button>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- ENGLISH CV CONTAINER                       -->
+    <!-- ========================================== -->
+    <div id="cv-en" class="container">
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <img src="Ali_logo.png" alt="Ali Bavarchee Logo" class="logo">
+                <div>
+                    <h1 class="name">Ali Bavarchee</h1>
+                    <div class="title">
+                        <span class="pretitle">DataPhysicist;</span>
+                        Machine Learning Engineer & Data Scientist
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div>Tehran, Iran</div>
+                <div>+98 912 684 2742</div>
+                <div>+39 351 323 8388</div>
+                <div><a href="mailto:ali.bavarchee@cern.ch">ali.bavarchee@cern.ch</a></div>
+                <div class="socials">
+                    <a href="https://github.com/AliBavarchee" target="_blank">GitHub</a> |
+                    <a href="https://linkedin.com/in/ali-bavarchee" target="_blank">LinkedIn</a> |
+                    <a href="https://orcid.org/0000-0001-7880-4525" target="_blank">ORCID</a> |
+                    <a href="https://inspirehep.net/authors/3199823" target="_blank">InspireHEP</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Professional Profile -->
+        <section class="section">
+            <h2 class="section-title">Professional Profile</h2>
+            <div class="cvitem">
+                <div class="cvitem-label"></div>
+                <div class="cvitem-content">
+                    Machine Learning and Data Science specialist with an M.Sc. in Physics of Data and extensive experience developing ML solutions for complex, high-dimensional scientific datasets. Strong background in supervised learning, deep learning, feature engineering, classification, time-series forecasting, statistical analysis, and scientific computing. Experienced with Python, PyTorch, TensorFlow/Keras, scikit-learn, LightGBM, C++, and large-scale experimental data analysis through LHCb, Belle II, and ICARUS.
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="cvitem">
+                <div class="cvitem-label">ML / AI</div>
+                <div class="cvitem-content">Python, PyTorch, TensorFlow, Keras, scikit-learn, LightGBM; classification, regression, ensemble learning, neural networks, CNNs, autoencoders, feature extraction, model evaluation</div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">Data Science</div>
+                <div class="cvitem-content">pandas, NumPy, SciPy, feature engineering, preprocessing, exploratory data analysis, statistical modeling, dimensionality reduction, time-series analysis, data visualization</div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">Forecasting</div>
+                <div class="cvitem-content">ARIMA, multi-horizon forecasting, lag features, rolling statistics, technical indicators, multiscale time-series modeling</div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">Programming</div>
+                <div class="cvitem-content">Python, C++, Julia, R, MATLAB, Bash/Shell</div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">Scientific / Software</div>
+                <div class="cvitem-content">ROOT, GEANT4, Basf2, LHCb Moore/DaVinci/Allen, Jupyter, Git/GitHub, Simulink</div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <h2 class="section-title">Experience</h2>
+            
+            <div class="cventry">
+                <div class="cventry-date">2024--Present</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">Machine Learning Researcher</div>
+                    <div class="cventry-subtitle">LHCb Collaboration</div>
+                    <ul>
+                        <li>Develop deep-learning models for particle identification, pattern recognition, and classification using detector data.</li>
+                        <li>Build data preprocessing, feature-engineering, training, validation, and performance-evaluation pipelines.</li>
+                        <li>Investigate calorimeter energy maps and sparse spatial patterns for high-throughput particle reconstruction environments.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="cventry-date">2022--2023</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">Machine Learning Researcher -- Particle Identification</div>
+                    <div class="cventry-subtitle">Belle II / KEKCC Apprenticeship</div>
+                    <ul>
+                        <li>Developed Boosted Decision Tree and neural-network models for charged-particle identification.</li>
+                        <li>Combined dE/dx, time-of-flight, and Cherenkov observables within Basf2 and GEANT4 workflows.</li>
+                        <li>Performed feature engineering, model optimization, validation, and comparative performance analysis.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="cventry-date">2020--2021</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">Machine Learning Researcher -- Event Classification</div>
+                    <div class="cventry-subtitle">ICARUS / Fermilab</div>
+                    <ul>
+                        <li>Developed ML classifiers for neutrino--muon discrimination using track topology and energy-deposition features.</li>
+                        <li>Focused on background rejection, signal purity, and robust classification in complex experimental data.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="cventry-date">2018--2019</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">Quality Controller</div>
+                    <div class="cventry-subtitle">Terraco / Sure Level</div>
+                    <div class="cventry-location">Tehran, Iran</div>
+                    <p style="margin-top: 5px;">Quality assurance, process monitoring, problem identification, and process optimization.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Projects -->
+        <section class="section">
+            <h2 class="section-title">Selected ML & Data Science Projects</h2>
+            
+            <div class="cvitem">
+                <div class="cvitem-label">2025--2026</div>
+                <div class="cvitem-content">
+                    <strong>Hybrid Multi-Horizon Cryptocurrency Forecasting</strong>
+                </div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label"></div>
+                <div class="cvitem-content">
+                    <p>Developed a multiscale ADA/USDT forecasting pipeline using Python, pandas, NumPy, LightGBM, PyTorch, and statistical models. Engineered lagged, rolling, volatility, return, and technical-indicator features across multiple temporal resolutions.</p>
+                    <p>Built a hybrid forecasting architecture combining ARIMA, gradient boosting, convolutional autoencoders, ResNet-based representations, and horizon-specific fusion models. Implemented leakage-safe temporal alignment and train/validation/test procedures.</p>
+                    <p><strong>GitHub: </strong> <a href="https://github.com/AliBavarchee/ada-gaf-fusion" target="_blank">github.com/AliBavarchee/ada-gaf-fusion</a></p>
+                </div>
+            </div>
+
+            <div class="cvitem" style="margin-top: 15px;">
+                <div class="cvitem-label">2024--2026</div>
+                <div class="cvitem-content">
+                    <strong>Deep Learning for Detector Pattern Recognition</strong>
+                </div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label"></div>
+                <div class="cvitem-content">
+                    <p>Developed deep-learning approaches for high-dimensional detector data, including convolutional architectures, feature extraction, sparse pattern recognition, and classification for particle identification.</p>
+                </div>
+            </div>
+
+            <div class="cvitem" style="margin-top: 15px;">
+                <div class="cvitem-label">2022--2024</div>
+                <div class="cvitem-content">
+                    <strong>Deep Learning for Particle Identification</strong>
+                </div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label"></div>
+                <div class="cvitem-content">
+                    <p>Designed a hybrid deep-learning framework for particle-identification optimization using complementary detector observables, resulting in a peer-reviewed publication in <em>Computer Physics Communications</em>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="cventry">
+                <div class="cventry-date">2019--2023</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">M.Sc. Physics of Data</div>
+                    <div class="cventry-subtitle">University of Padova</div>
+                    <div class="cventry-location">Padova, Italy</div>
+                    <p style="margin-top: 5px;">Department of Physics and Astronomy</p>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="cventry-date">2012--2014</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">M.Sc. Elementary Particles & Quantum Field Theory</div>
+                    <div class="cventry-subtitle">IAU -- North Tehran Branch</div>
+                    <div class="cventry-location">Tehran, Iran</div>
+                    <p style="margin-top: 5px;">Department of Physics</p>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="cventry-date">2006--2012</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">B.Sc. Engineering Physics (Plasma)</div>
+                    <div class="cventry-subtitle">IAU -- Science and Research Branch</div>
+                    <div class="cventry-location">Tehran, Iran</div>
+                    <p style="margin-top: 5px;">Plasma Research Center</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publication -->
+        <section class="section">
+            <h2 class="section-title">Publication</h2>
+            <div class="cvitem">
+                <div class="cvitem-label">2024</div>
+                <div class="cvitem-content">
+                    <strong>Hybrid Deep Learning Model for PID Optimization</strong>, <em>Computer Physics Communications</em>.<br>
+                    DOI: <a href="https://doi.org/10.1016/j.cpc.2024.109277" target="_blank">10.1016/j.cpc.2024.109277</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Languages -->
+        <section class="section">
+            <h2 class="section-title">Languages</h2>
+            <div class="cvitem">
+                <div class="cvitem-label">English</div>
+                <div class="cvitem-content">Fluent (Verbal and Written)</div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">Persian</div>
+                <div class="cvitem-content">Native</div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">Italian</div>
+                <div class="cvitem-content">Basic (Verbal), Good (Written)</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ========================================== -->
+    <!-- PERSIAN CV CONTAINER (RTL)                 -->
+    <!-- ========================================== -->
+    <div id="cv-fa" class="container hidden">
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <img src="Ali_logo.png" alt="لوگو علی باورچی" class="logo">
+                <div>
+                    <h1 class="name">علی باورچی</h1>
+                    <div class="title">
+                        مهندس یادگیری ماشین و دانشمند علوم داده
+                    </div>
+                </div>
+            </div>
+            <div class="contact-info">
+                <div>تهران، ایران</div>
+                <div dir="ltr">+98 912 684 2742</div>
+                <div dir="ltr">+39 351 323 8388</div>
+                <div><a href="mailto:ali.bavarchee@cern.ch">ali.bavarchee@cern.ch</a></div>
+                <div class="socials">
+                    <a href="https://github.com/AliBavarchee" target="_blank">GitHub</a> |
+                    <a href="https://linkedin.com/in/ali-bavarchee" target="_blank">LinkedIn</a> |
+                    <a href="https://inspirehep.net/authors/3199823" target="_blank">InspireHEP</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- خلاصه حرفه‌ای -->
+        <section class="section">
+            <h2 class="section-title">خلاصه حرفه‌ای</h2>
+            <div class="cvitem">
+                <div class="cvitem-label"></div>
+                <div class="cvitem-content">
+                    <p>متخصص یادگیری ماشین و علم داده با مدرک کارشناسی ارشد <i>Physics of Data</i> و سابقهٔ گسترده در توسعه و ارزیابی مدل‌های یادگیری ماشین برای داده‌های پیچیده و پُربُعد. تجربهٔ عملی در یادگیری نظارت‌شده، یادگیری عمیق، مهندسی ویژگی، طبقه‌بندی، تحلیل سری‌های زمانی، مدل‌سازی آماری و پردازش داده‌های علمی دارم.</p>
+                    <p>تجربهٔ کار با <span dir="ltr">Python, PyTorch, TensorFlow/Keras, scikit-learn, LightGBM, C++</span> و توسعهٔ pipelineهای پردازش داده، آموزش و ارزیابی مدل، تحلیل عملکرد و حل مسائل پیچیدهٔ داده‌محور در پروژه‌های علمی و کاربردی.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- مهارت‌های فنی -->
+        <section class="section">
+            <h2 class="section-title">مهارت‌های فنی</h2>
+            <div class="cvitem">
+                <div class="cvitem-label">یادگیری ماشین و هوش مصنوعی</div>
+                <div class="cvitem-content"><span dir="ltr">Python, PyTorch, TensorFlow, Keras, scikit-learn, LightGBM</span>؛ طبقه‌بندی، رگرسیون، مدل‌های ensemble، شبکه‌های عصبی، <span dir="ltr">CNN</span>، autoencoder، استخراج ویژگی و ارزیابی مدل</div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">علم داده</div>
+                <div class="cvitem-content"><span dir="ltr">pandas, NumPy, SciPy</span>، پیش‌پردازش داده، مهندسی ویژگی، تحلیل اکتشافی داده، مدل‌سازی آماری، کاهش بُعد، تحلیل سری‌های زمانی و مصورسازی داده</div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">پیش‌بینی و سری‌های زمانی</div>
+                <div class="cvitem-content"><span dir="ltr">ARIMA</span>، پیش‌بینی چندافقی، ویژگی‌های تأخیری، آمارهای rolling، شاخص‌های تکنیکال و مدل‌سازی چندمقیاسی</div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">برنامه‌نویسی</div>
+                <div class="cvitem-content"><span dir="ltr">Python, C++, Julia, R, MATLAB, Bash/Shell</span></div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">ابزارها و نرم‌افزارها</div>
+                <div class="cvitem-content"><span dir="ltr">ROOT, GEANT4, Basf2, LHCb Moore/DaVinci/Allen, Jupyter, Git/GitHub, Simulink</span></div>
+            </div>
+        </section>
+
+        <!-- سابقه حرفه‌ای و پژوهشی -->
+        <section class="section">
+            <h2 class="section-title">سابقه حرفه‌ای و پژوهشی</h2>
+            
+            <div class="cventry">
+                <div class="cventry-date">۲۰۲۴--اکنون</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">پژوهشگر یادگیری ماشین</div>
+                    <div class="cventry-subtitle">همکاری بین‌المللی <span dir="ltr">LHCb</span></div>
+                    <ul>
+                        <li>توسعهٔ مدل‌های یادگیری عمیق برای شناسایی ذرات، تشخیص الگو و طبقه‌بندی داده‌های آشکارساز.</li>
+                        <li>طراحی فرایندهای پیش‌پردازش داده، مهندسی ویژگی، آموزش، اعتبارسنجی و ارزیابی عملکرد مدل‌ها.</li>
+                        <li>بررسی داده‌های انرژی و الگوهای فضایی تنک برای بازسازی سریع و مقیاس‌پذیر رویدادها.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="cventry-date">۲۰۲۲--۲۰۲۳</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">پژوهشگر یادگیری ماشین -- شناسایی ذرات</div>
+                    <div class="cventry-subtitle">پروژهٔ <span dir="ltr">Belle II / KEKCC Apprenticeship</span></div>
+                    <ul>
+                        <li>توسعهٔ مدل‌های <span dir="ltr">Boosted Decision Tree</span> و شبکه‌های عصبی برای طبقه‌بندی و شناسایی ذرات باردار.</li>
+                        <li>ترکیب ویژگی‌های <span dir="ltr">dE/dx</span>، زمان پرواز و اطلاعات <span dir="ltr">Cherenkov</span> در چارچوب‌های <span dir="ltr">Basf2</span> و <span dir="ltr">GEANT4</span>.</li>
+                        <li>انجام مهندسی ویژگی، بهینه‌سازی مدل، اعتبارسنجی و مقایسهٔ عملکرد روش‌های مختلف یادگیری ماشین.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="cventry-date">۲۰۲۰--۲۰۲۱</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">پژوهشگر یادگیری ماشین -- طبقه‌بندی رویداد</div>
+                    <div class="cventry-subtitle"><span dir="ltr">ICARUS / Fermilab</span></div>
+                    <ul>
+                        <li>طراحی مدل یادگیری ماشین برای تفکیک رویدادهای نوترینویی از میون‌های پس‌زمینه.</li>
+                        <li>استخراج ویژگی از توپولوژی مسیرها و الگوهای رسوب انرژی و بهینه‌سازی مسئلهٔ تشخیص سیگنال از پس‌زمینه.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="cventry-date">۲۰۱۸--۲۰۱۹</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">کنترل کیفیت</div>
+                    <div class="cventry-subtitle">Terraco / Sure Level</div>
+                    <div class="cventry-location">تهران، ایران</div>
+                    <p style="margin-top: 5px;">کنترل کیفیت، پایش فرایند، شناسایی خطا و بهینه‌سازی فرایندهای کاری.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- پروژه‌های منتخب یادگیری ماشین و علم داده -->
+        <section class="section">
+            <h2 class="section-title">پروژه‌های منتخب یادگیری ماشین و علم داده</h2>
+            
+            <div class="cvitem">
+                <div class="cvitem-label">۲۰۲۵--۲۰۲۶</div>
+                <div class="cvitem-content">
+                    <strong>پیش‌بینی چندافقی قیمت رمزارز با مدل ترکیبی</strong>
+                </div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label"></div>
+                <div class="cvitem-content">
+                    <p>توسعهٔ یک pipeline چندمقیاسی برای پیش‌بینی سری زمانی <span dir="ltr">ADA/USDT</span> با استفاده از <span dir="ltr">Python، pandas، NumPy، LightGBM</span> و <span dir="ltr">PyTorch</span>. ایجاد ویژگی‌های lag، rolling، بازده، نوسان و شاخص‌های تکنیکال در مقیاس‌های زمانی مختلف.</p>
+                    <p>پیاده‌سازی معماری ترکیبی شامل <span dir="ltr">ARIMA</span>، مدل‌های gradient boosting، <span dir="ltr">convolutional autoencoder</span> و بازنمایی مبتنی بر <span dir="ltr">ResNet</span>، همراه با مدل‌های fusion اختصاصی برای افق‌های مختلف پیش‌بینی.</p>
+                    <p>طراحی فرایند هم‌ترازی زمانی بدون نشت اطلاعات (<span dir="ltr">data leakage</span>) و تفکیک صحیح داده‌های آموزش، اعتبارسنجی و آزمون برای داده‌های سری زمانی.</p>
+                    <p><strong>GitHub: </strong> <a href="https://github.com/AliBavarchee/ada-gaf-fusion" target="_blank"><span dir="ltr">github.com/AliBavarchee/ada-gaf-fusion</span></a></p>
+                </div>
+            </div>
+
+            <div class="cvitem" style="margin-top: 15px;">
+                <div class="cvitem-label">۲۰۲۴--۲۰۲۶</div>
+                <div class="cvitem-content">
+                    <strong>یادگیری عمیق برای تشخیص الگو در داده‌های آشکارساز</strong>
+                </div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label"></div>
+                <div class="cvitem-content">
+                    <p>توسعهٔ روش‌های یادگیری عمیق برای داده‌های پُربُعد شامل معماری‌های کانولوشنی، استخراج ویژگی، تشخیص الگوهای تنک و طبقه‌بندی داده‌های پیچیده.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- تحصیلات -->
+        <section class="section">
+            <h2 class="section-title">تحصیلات</h2>
+            
+            <div class="cventry">
+                <div class="cventry-date">۲۰۱۹--۲۰۲۳</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">کارشناسی ارشد <span dir="ltr">Physics of Data</span></div>
+                    <div class="cventry-subtitle">دانشگاه پادوا</div>
+                    <div class="cventry-location">پادوا، ایتالیا</div>
+                    <p style="margin-top: 5px;">دانشکدهٔ فیزیک و نجوم</p>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="cventry-date">۲۰۱۲--۲۰۱۴</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">کارشناسی ارشد فیزیک ذرات بنیادی و نظریه میدان کوانتومی</div>
+                    <div class="cventry-subtitle">دانشگاه آزاد اسلامی -- واحد تهران شمال</div>
+                    <div class="cventry-location">تهران، ایران</div>
+                    <p style="margin-top: 5px;">گروه فیزیک</p>
+                </div>
+            </div>
+
+            <div class="cventry">
+                <div class="cventry-date">۲۰۰۶--۲۰۱۲</div>
+                <div class="cventry-content">
+                    <div class="cventry-title">کارشناسی مهندسی فیزیک -- گرایش پلاسما</div>
+                    <div class="cventry-subtitle">دانشگاه آزاد اسلامی -- واحد علوم و تحقیقات</div>
+                    <div class="cventry-location">تهران، ایران</div>
+                    <p style="margin-top: 5px;">مرکز تحقیقات پلاسما</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- مقاله منتخب -->
+        <section class="section">
+            <h2 class="section-title">مقاله منتخب</h2>
+            <div class="cvitem">
+                <div class="cvitem-label">۲۰۲۴</div>
+                <div class="cvitem-content">
+                    <strong><span dir="ltr">Hybrid Deep Learning Model for PID Optimization</span></strong>، <i><span dir="ltr">Computer Physics Communications</span></i>.<br>
+                    DOI: <a href="https://doi.org/10.1016/j.cpc.2024.109277" target="_blank"><span dir="ltr">10.1016/j.cpc.2024.109277</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- زبان‌ها -->
+        <section class="section">
+            <h2 class="section-title">زبان‌ها</h2>
+            <div class="cvitem">
+                <div class="cvitem-label">انگلیسی</div>
+                <div class="cvitem-content">مسلط (Professional)</div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">فارسی</div>
+                <div class="cvitem-content">زبان مادری</div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">ایتالیایی</div>
+                <div class="cvitem-content">مکالمه مقدماتی / نوشتاری خوب</div>
+            </div>
+        </section>
+        
+        <!-- پروفایل‌های حرفه‌ای -->
+        <section class="section">
+            <h2 class="section-title">پروفایل‌های حرفه‌ای</h2>
+            <div class="cvitem">
+                <div class="cvitem-label">GitHub</div>
+                <div class="cvitem-content"><a href="https://github.com/AliBavarchee" target="_blank"><span dir="ltr">github.com/AliBavarchee</span></a></div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">LinkedIn</div>
+                <div class="cvitem-content"><a href="https://www.linkedin.com/in/ali-bavarchee/" target="_blank"><span dir="ltr">linkedin.com/in/ali-bavarchee/</span></a></div>
+            </div>
+            <div class="cvitem">
+                <div class="cvitem-label">InspireHEP</div>
+                <div class="cvitem-content"><a href="https://inspirehep.net/authors/2800236" target="_blank"><span dir="ltr">inspirehep.net/authors/2800236</span></a></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- JavaScript for Language Switching -->
+    <script>
+        function switchLang(lang) {
+            const cvEn = document.getElementById('cv-en');
+            const cvFa = document.getElementById('cv-fa');
+            const btnEn = document.getElementById('btn-en');
+            const btnFa = document.getElementById('btn-fa');
+            const body = document.body;
+
+            if (lang === 'en') {
+                cvEn.classList.remove('hidden');
+                cvFa.classList.add('hidden');
+                btnEn.classList.add('active');
+                btnFa.classList.remove('active');
+                body.classList.remove('fa');
+                document.documentElement.lang = 'en';
+                document.title = 'Ali Bavarchee - CV';
+            } else if (lang === 'fa') {
+                cvFa.classList.remove('hidden');
+                cvEn.classList.add('hidden');
+                btnFa.classList.add('active');
+                btnEn.classList.remove('active');
+                body.classList.add('fa');
+                document.documentElement.lang = 'fa';
+                document.title = 'علی باورچی - رزومه';
+            }
+        }
+    </script>
+</body>
+</html>
