@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://alibavarchee.github.io/CV-Ali-Bavarchee/sitemap.xml
